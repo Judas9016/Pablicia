@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PABLICIA Shop Store</title>
+    <!-- Incluyendo Bulma desde CDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <!-- Fuente de Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Pacifico&display=swap" rel="stylesheet">
+    <!-- FontAwesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-k6RqeWeci5ZR/Lv4MR0sA0FfDOMM8Fsk1r9bsOIJ7brzIj0Z90+6X3P4F85OX9g5" crossorigin="anonymous">
+    <!-- Estilos personalizados -->
+    <link rel="stylesheet" href="styles/home.css">
+    <link rel="stylesheet" href="css/animation.css">
+</head>
+<body>
+    
+    <!-- Navbar -->
+    <nav class="navbar is-black">
+        <div class="navbar-brand">
+            <a class="navbar-item" href="#">
+                <span class="logo cursive">PABLICIA</span>
+            </a>
+            <div class="navbar-burger burger" data-target="navbarExampleTransparentExample">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+        <div id="navbarExampleTransparentExample" class="navbar-menu">
+            <div class="navbar-end">
+                <a class="navbar-item" href="#inicio">Inicio</a>
+                <a class="navbar-item" href="#sobre-nosotros">Sobre Nosotros</a>
+                <a class="navbar-item" href="#contacto">Contacto</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Sección de bienvenida -->
+    <section class="hero is-fullheight is-fuchsia" id="inicio">
+        <div class="hero-body">
+          <div class="container has-text-centered">
+            <h1 class="title has-text-white is-size-1">Bienvenidos a PABLICIA Shop Store</h1>
+            <p class="subtitle has-text-white is-size-3">Moda femenina de alta calidad al por mayor y al detalle</p>
+          </div>
+        </div>
+      </section>
+
+    <!-- Sección de contexto -->
+    <section class="section">
+        <div class="container">
+          <h2 class="title has-text-centered">Sobre Nosotros</h2>
+          <p class="has-text-centered">En PABLICIA Shop Store, nos dedicamos a ofrecer moda femenina de alta calidad a precios accesibles. Nos especializamos en ventas al por mayor, pero también atendemos a clientes individuales que buscan las últimas tendencias en moda.</p>
+        </div>
+      </section>
+
+    <!-- Secciones de texto -->
+    <section class="section has-background-light">
+        <div class="container">
+            <div class="columns is-variable is-8">
+                <div class="column has-text-centered">
+                    <h3 class="title is-4">Personalizado</h3>
+                    <p>Ofrecemos ropa personalizada según tus necesidades y preferencias.</p>
+                </div>
+                <div class="column has-text-centered">
+                    <h3 class="title is-4">Materiales</h3>
+                    <p>Utilizamos materiales de alta calidad para garantizar la durabilidad y el confort.</p>
+                </div>
+                <div class="column has-text-centered">
+                    <h3 class="title is-4">Empaquetado</h3>
+                    <p>Cuidamos cada detalle, incluido el empaquetado, para una presentación impecable.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pie de página -->
+    <footer class="footer has-background-black has-text-white">
+        <div class="content has-text-centered">
+            <div class="columns">
+                <div class="column">
+                    <p class="title is-4 has-text-white">Síguenos</p>
+                    <a href="#" class="icon has-text-white">Intragram:<i class="fab fa-facebook-f">@PABLICIA</i></a>
+                    <a href="#" class="icon has-text-white"><i class="fab fa-instagram"></i></a>
+                </div>
+                <div class="column">
+                    <p class="title is-4 has-text-white">Enlaces</p>
+                    <a href="#" class="has-text-white">Catálogo</a><br>
+                    <a href="#" class="has-text-white">Women</a><br>
+                    <a href="#" class="has-text-white">Men</a><br>
+                    <a href="#" class="has-text-white">Contacto</a>
+                </div>
+            </div>
+            <p>&copy; 2024 PABLICIA Shop Store. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+<!-- scripts -->
+
+    <!-- Scripts de Bulma -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+            if ($navbarBurgers.length > 0) {
+                $navbarBurgers.forEach(el => {
+                    el.addEventListener('click', () => {
+                        const target = el.dataset.target;
+                        const $target = document.getElementById(target);
+                        el.classList.toggle('is-active');
+                        $target.classList.toggle('is-active');
+                    });
+                });
+            }
+        });
+        
+        const hero = document.getElementById("inicio");
+const heroBody = hero.querySelector(".hero-body");
+
+window.addEventListener("scroll", function() {
+  const scrollPosition = window.scrollY;
+  const heroTop = hero.offsetTop;
+  const heroHeight = hero.offsetHeight;
+
+  if (scrollPosition >= heroTop && scrollPosition < heroTop + heroHeight) {
+    heroBody.classList.add("active");
+  } else {
+    heroBody.classList.remove("active");
+  }
+});
+
+
+    </script>
+</body>
+</html>
