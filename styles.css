@@ -1,0 +1,558 @@
+/* Estilos generales */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #121212; /* Fondo oscuro */
+    color: #000000; /* Texto blanco */
+}
+
+
+* {
+  box-sizing: border-box;
+}
+
+button {
+  border: 0;
+  padding: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.navbar,
+.navbar-burger,
+.menu,
+.background {
+  position: fixed;
+}
+
+body.open .background {
+  filter: blur(20px);
+}
+
+.navbar {
+  z-index: 1;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 72px;
+  padding-left: 20px;
+  padding-right: 72px;
+  background: #19191c;
+  color: #f9f9f9;
+}
+
+.navbar > button {
+  font-size: 28px;
+}
+
+.navbar-logo {
+  height: 25px;
+}
+
+.navbar-burger {
+  z-index: 3;
+  top: 0;
+  right: 0;
+  display: grid;
+  place-items: center;
+  width: 72px;
+  height: 72px;
+  background-image: url("assents/menu.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+body.open .navbar-burger {
+  background-image: url("assents/close.svg");
+}
+
+.navbar-search {
+  border: 0;
+  height: 40px;
+  background: #2f3339 url("assents/search.svg");
+  background-repeat: no-repeat;
+  background-position: 10px 50%;
+  border: 0;
+  border-radius: 6px;
+  padding-left: 36px;
+  width: 180px;
+  font-size: 16px;
+  font-family: "Euclid Circular A";
+}
+
+.navbar-search::placeholder {
+  color: #a7a7a7;
+}
+
+.menu {
+  z-index: 2;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 32px;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.5s;
+}
+
+body.open .menu {
+  opacity: 1;
+  visibility: visible;
+}
+
+.menu > a {
+  color: #f9f9f9;
+  font-size: 32px;
+  font-family: "Euclid Circular A";
+  text-decoration: none;
+}
+
+body.open .menu > a {
+  animation: appear 0.3s both;
+}
+
+@keyframes appear {
+  0% {
+    opacity: 0;
+    translate: 0 50px;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+
+/* Estilo para los titulos */
+.container-titulos {
+    display: flex;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: flex-start; /* Centra el texto verticalmente, pero lo coloca más cerca de la parte superior */
+    height: auto; /* Ajusta la altura según el contenido */
+    padding-top: 50px; /* Añade un pequeño espacio en la parte superior */
+    text-align: center; /* Centra el texto dentro del contenedor */
+    font-size: 50px;
+    font-weight: bold;
+    color: #ffffff; /* Color base fucsia */
+    text-transform: uppercase; /* Hace el texto en mayúsculas */
+    text-shadow: 
+        0 0 3px #ff00ff,   /* Sombra más suave */
+        0 0 6px #000000;  /* Sombra más sutil */
+}
+
+/* footer */
+.footer {
+  background-color: #000;
+  color: #fff;
+  padding: 40px;
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+
+.footer-section {
+  display: inline-block;
+  width: 30%;
+  margin: 10px;
+  vertical-align: top;
+}
+
+.footer-section h3 {
+  margin-bottom: 20px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-section ul li {
+  margin: 5px 0;
+}
+
+.footer-section ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.footer-section ul li a:hover {
+  text-decoration: underline;
+}
+
+.footer-bottom {
+  margin-top: 20px;
+  font-size: 12px;
+}
+
+.footer-social{
+  display: flex;
+  justify-content: center;
+  gap: 15px; /* Espaciado entre los botones */
+  margin-top: 20px; /* Espaciado superior */
+}
+
+.social-buttons {
+  display: flex;
+  justify-content: center;  /* Centra los botones horizontalmente */
+  align-items: center;      /* Alinea los botones verticalmente */
+  gap: 15px;                /* Espaciado entre los botones */
+  margin-top: 20px;         /* Espaciado superior opcional */
+}
+
+/* Sección de la marca (logo) */
+.footer-logo {
+  text-align: center;  /* Centra el logo */
+  margin: 20px 0;      /* Espaciado superior e inferior */
+}
+
+.footer-logo img {
+  width: 150px;        /* Ajusta el tamaño del logo (puedes modificarlo) */
+  height: auto;        /* Mantiene la proporción del logo */
+}
+/* Responsive Design */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-section {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .footer-section h3 {
+        text-align: center;
+    }
+}
+
+/* Redes Sociales*/
+/* Ajusta el tamaño del contenedor principal */
+.parent {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Ajusta el tamaño uniforme de todos los íconos */
+  .child {
+    width: 40px;  /* Ajustado a un tamaño uniforme */
+    height: 40px; /* Ajustado a un tamaño uniforme */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform-style: preserve-3d;
+    transition: all 0.3s cubic-bezier(0.68, 0.85, 0.265, 1.85);
+    border-radius: 50%;
+    margin: 0 5px;
+    box-shadow: inset 1px 1px 2px #fff, 0 0 5px #4442;
+  }
+  
+  /* Efecto hover para los íconos */
+  .child:hover {
+    background-color: white;
+    transform: perspective(180px) rotateX(60deg) translateY(2px);
+  }
+  
+  /* Efectos hover adicionales para cada ícono */
+  .child-1:hover {
+    box-shadow: 0px 10px 10px #ffffff;
+  }
+  .child-2:hover {
+    box-shadow: 0px 10px 10px #ff00ff;
+  }
+  .child-3:hover {
+    box-shadow: 0px 10px 10px #000;
+  }
+  .child-4:hover {
+    box-shadow: 0px 10px 10px #4267b2;
+  }
+  
+  /* Ajustes al estilo del botón dentro del ícono */
+  .button {
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+    border: none;
+    background-color: transparent;
+    font-size: 20px;
+    transition-duration: 0.5s;
+    transition-timing-function: cubic-bezier(0.68, -0.85, 0.265, 1.55);
+  }
+  
+  /* Efecto hover en el botón */
+  .child:hover > .button {
+    transform: translate3d(0px, 20px, 30px) perspective(80px) rotateX(-60deg)
+      translateY(2px) translateZ(10px);
+  }
+    
+  
+/* Productos */
+.card {
+    border-radius: 12px;
+    overflow: hidden;
+    background-color: #1a1a1a; /* Fondo oscuro para las tarjetas */
+    border: 1px solid #333; /* Borde sutil oscuro */
+}
+
+.card img {
+    height: 200px;
+    object-fit: cover;
+}
+
+.card-body {
+    background-color: #1a1a1a; /* Fondo oscuro en el cuerpo de la tarjeta */
+    color: #fff;
+}
+
+.card-title {
+    font-weight: 600;
+    color: #ff00ff; /* Fucsia */
+}
+
+.card-text {
+    font-size: 1.2rem;
+}
+
+
+
+/* Productos */
+.card-container {
+    display: flex;
+    flex-direction: row; /* Organiza las cards horizontalmente */
+    gap: 20px; /* Espaciado entre las cards */
+    justify-content: center; /* Centra las cards horizontalmente */
+    padding: 20px; /* Espaciado interno del contenedor */
+}
+
+.card {
+    width: 300px;
+    height: 400px; /* Ajusté la altura para que quepa la imagen */
+    background-color: #4158D0;
+    background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
+    border-radius: 8px;
+    color: white;
+    overflow: hidden;
+    position: relative;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+    transition: all 0.5s cubic-bezier(0.23, 1, 0.320, 1);
+    cursor: pointer;
+}
+
+.card-content {
+    padding: 20px;
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    color: white;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 100%;
+}
+
+.card-title {
+    font-size: 24px;
+    font-weight: 700;
+    color: inherit;
+    text-transform: uppercase;
+}
+
+.card-para {
+    color: inherit;
+    opacity: 0.8;
+    font-size: 14px;
+}
+
+.card:hover {
+    transform: rotateY(10deg) rotateX(10deg) scale(1.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.card:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    z-index: 2;
+}
+
+.card:hover:before {
+    opacity: 1;
+}
+
+/* Estilo para la imagen dentro de la tarjeta */
+.card-image {
+    width: 100%;
+    height: 200px; /* Controla la altura de la imagen */
+    object-fit: cover; /* Asegura que la imagen cubra el área sin deformarse */
+    border-radius: 8px; /* Bordes redondeados */
+    margin-bottom: 10px; /* Espaciado entre la imagen y el contenido */
+}
+
+
+/* Banner */
+.contenedor-bienvenida {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    height: 100vh;
+    padding: 20px;
+    background-color: #121212; /* Fondo oscuro */
+}
+
+.objeto-animado {
+    position: relative;
+    width: 300px; /* Tamaño ajustado */
+    height: 300px;
+    transform-style: preserve-3d;
+    transition: 0.5s all;
+    transform: rotateX(-25deg) rotateY(20deg);
+}
+
+.objeto-animado-hijo {
+    animation: giro 6s infinite linear;
+    transform-style: preserve-3d;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: url('assents/IMG/Banner/1.avif') no-repeat center;
+    background-size: cover;
+    border-radius: 15px; /* Bordes redondeados */
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+}
+
+.objeto-animado-hijo::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    filter: blur(20px);
+    box-shadow: 0 0 80px 20px rgba(255, 255, 255, 0.6);
+    transform: rotateX(90deg) scale(1.1) translateZ(-120px);
+}
+
+.texto-bienvenida {
+    max-width: 500px;
+    text-align: left;
+    color: #fff;
+}
+
+.texto-bienvenida h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    margin: 0 0 10px;
+    color: #fff;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 0 0 20px rgba(255, 255, 255, 0.6);
+    animation: resplandor 1.5s infinite alternate;
+}
+
+.texto-bienvenida p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+@keyframes giro {
+    0% {
+      transform: rotate3d(0, 1, 0, 0deg);
+    }
+    100% {
+      transform: rotate3d(0, 1, 0, 360deg);
+    }
+}
+
+@keyframes resplandor {
+    from {
+      text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 0 0 20px rgba(255, 255, 255, 0.6);
+    }
+    to {
+      text-shadow: 0 0 15px rgba(255, 255, 255, 1), 0 0 30px rgba(255, 255, 255, 0.9);
+    }
+}
+
+/* Media Queries para hacer el diseño responsivo */
+@media (max-width: 768px) {
+    .card-container {
+        flex-direction: column; /* Organiza las cards verticalmente */
+        align-items: center; /* Centra las cards */
+    }
+
+    .navbar-brand {
+        font-size: 1.5rem;
+    }
+
+    .navbar-nav .nav-link {
+        font-size: 1rem;
+    }
+
+    .container-titulos {
+        font-size: 40px;
+    }
+
+    .contenedor-bienvenida {
+        flex-direction: column;
+    }
+
+    .texto-bienvenida h1 {
+        font-size: 2.5rem;
+    }
+
+    .texto-bienvenida p {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .card-container {
+        flex-direction: column; /* Coloca las cards en una sola columna */
+        padding: 10px;
+    }
+
+    .card {
+        width: 100%; /* Las tarjetas ocuparán todo el ancho */
+        height: auto; /* La altura se ajustará según el contenido */
+    }
+
+    .navbar-brand {
+        font-size: 1.2rem;
+    }
+
+    .container-titulos {
+        font-size: 30px;
+    }
+
+    .contenedor-bienvenida {
+        gap: 20px;
+    }
+
+    .texto-bienvenida h1 {
+        font-size: 2rem;
+    }
+
+    .texto-bienvenida p {
+        font-size: 0.9rem;
+    }
+}
